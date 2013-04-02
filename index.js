@@ -8,18 +8,16 @@ var path = require('path')
 
 if (!stream.Transform) stream = require('readable-stream')
 
-module.exports = function (username) {
+module.exports = function (username, aKeys) {
   if (!username) return console.error('Must provide github username.')
   var newLineStream = new stream.Transform
+  if (!aKeys) aKeys = path.join(process.env.HOME, '.ssh', 'authorized_keys')
   newLineStream._transform = addNewLine
-  console.log('Confirm that the correct (and only correct) keys were added to ~/.ssh/authorized_keys')
+  console.log('Confirm that the correct (and only correct) keys were added to ' + aKeys)
   return request('https://api.github.com/users/' + username + '/keys')
     .pipe(JSONStream.parse([true, 'key']))
     .pipe(newLineStream)
-    .pipe(fs.createWriteStream(
-          path.join(process.env.HOME, '.ssh', 'authorized_keys')
-          , {flags: 'a'})
-    )
+    .pipe(fs.createWriteStream(aKeys, {flags: 'a'}))
 }
 
 function addNewLine (chunk, encoding, cb) {

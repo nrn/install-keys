@@ -2,5 +2,5 @@
 
 var installKeys = require('./index.js')
 
-return installKeys(process.argv[2])
+return installKeys(process.argv[2], process.argv[3])
 
