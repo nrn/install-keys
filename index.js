@@ -6,8 +6,6 @@ var path = require('path')
   , request = require('request')
   , JSONStream = require('JSONStream')
 
-if (!stream.Transform) stream = require('readable-stream')
-
 module.exports = function (username, aKeys) {
   if (!username) return console.error('Must provide github username.')
   var newLineStream = new stream.Transform

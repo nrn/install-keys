@@ -1,12 +1,11 @@
 { "name": "install-keys"
-, "version": "0.0.4"
+, "version": "0.0.5"
 , "description": "Install your ssh pub keys from github."
 , "keywords": [ "ssh", "keys", "github" ]
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
 , "dependencies":
   { "request": "*"
   , "JSONStream": "*"
-  , "readable-stream": "*"
   }
 , "engines": { "node": ">=0.10" }
 , "bin": "cli.js"
