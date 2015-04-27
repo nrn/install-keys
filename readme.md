@@ -1,5 +1,12 @@
 # Install Keys
 
+## DEPRECATED
+
+You can now simply `curl https://github.com/<username>.keys` to get a user's
+public key.
+
+## Old readme below
+
 Install your ssh pub keys from github as authorized keys.
 
 ```bash

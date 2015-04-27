@@ -1,5 +1,5 @@
 { "name": "install-keys"
-, "version": "0.0.5"
+, "version": "0.0.6"
 , "description": "Install your ssh pub keys from github."
 , "keywords": [ "ssh", "keys", "github" ]
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
